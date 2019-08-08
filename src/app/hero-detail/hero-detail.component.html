@@ -4,6 +4,7 @@
   <div>
     <label>name:
       <input [(ngModel)]="hero.name" placeholder="name"/>
+      <input [(ngModel)]="hero.strengh" placeholder="strengh" min="0" max="100">
     </label>
   </div>
   <button (click)="goBack()">go back</button>

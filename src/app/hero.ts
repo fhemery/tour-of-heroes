@@ -1,5 +1,3 @@
 export class Hero {
-  id: number;
-  name: string;
-  strength: number;
+  public constructor(public id: number, public name: string, public strength: number){}
 }

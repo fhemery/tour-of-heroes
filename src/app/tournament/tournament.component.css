@@ -1,0 +1,26 @@
+.round{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    
+    
+    height: 900px;
+    float:left;
+    width: 200px;
+    margin-left: 10px;
+}
+
+.match{
+    border: 1px solid black;
+    height: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.action{
+    float: right;
+}
+
+.winner {
+    background-color: lightgreen;
+}

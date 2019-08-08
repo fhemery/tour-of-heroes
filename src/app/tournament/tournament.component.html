@@ -1,0 +1,22 @@
+<div class="no-tournament" *ngIf="!isTournamentStarted">
+  <p> There is currently no tournament. You can start by creating one!</p>
+  <button id="createTournament" type="button" (click)="startTournament()">Create</button>
+</div>
+
+<div *ngIf="!!tournament">
+  <h1>The tournament</h1>
+  <div class="round" *ngFor="let round of tournament.rounds">
+    <div class="match" [id]="'match' + match.id" *ngFor="let match of round.matches">
+      <div class="action" *ngIf="match.isReady && !match.winner">
+        <button type="button" (click)="startMatch(match)">Play!</button>
+      </div>
+      <div class="opponents">
+        <div class="opponent" [ngClass]="{'winner': match.opponent1 === match.winner}" *ngIf="match.opponent1">{{match.opponent1.name}}</div>
+        <div class="opponent" *ngIf="!match.opponent1">-</div>
+        <div class="opponent" [ngClass]="{'winner': match.opponent2 === match.winner}" *ngIf="match.opponent2">{{match.opponent2.name}}</div>
+        <div class="opponent" *ngIf="!match.opponent2">-</div>
+      </div>
+
+    </div>
+  </div>
+</div>
